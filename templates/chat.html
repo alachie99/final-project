@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+        <link rel="stylesheet" href="static/css/chat.css">
+        <title>Chatbot</title>
+    </head>
+ <body>
+
+ 
+
+<div id="body">
+
+<div id="chat-circle" class="btn btn-raised" >
+        <div id="chat-overlay"></div>
+          <i class="material-icons">speaker_phone</i>
+   </div>
+   
+
+  <div class="chat-box">
+    <div class="chat-box-header">
+      ChatBot
+      <span class="chat-box-toggle"></span>
+    </div>
+    <div class="chat-box-body">
+      <div class="chat-box-overlay">
+
+        <div class="popup">
+          {% for message in get_flashed_messages() %}
+            <p class="ms">
+              {{message}}
+            </p>
+          {% endfor %}
+          
+          </div>
+          <p class="response" >
+               {{ response }}
+            </p>
+      </div>
+      <div class="chat-logs">
+
+      </div><!--chat-log -->
+    </div>
+    <div class="chat-input">
+      <form action="/check_text" method="post" enctype="multipart/form-data" id="form1">
+        <div>
+          <input class="inputTxt" name="text" placeholder="Enter message"></input>
+          <input class="subBtn" type="submit"></input>
+
+
+        </div>
+<!--         <a class="chat-submit" href="{{url_for('check_text')}}"  id="chat-submit">Send</i></a>-->
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+</div>
+</div>
+</div>
+<!-- partial -->
+<!--  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>-->
+<!--<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script><script  src="static/script.js"></script>-->
+
+
+    </body>
+</html>
